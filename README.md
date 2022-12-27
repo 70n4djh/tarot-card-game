@@ -1,5 +1,5 @@
 # tarot-card-game
-🔮 Let's get superstitious
+🔮 Let's get superstitious! [demo](https://70n4djh.github.io/tarot-card-game/)
 
 # Getting Started with Create React App
 
