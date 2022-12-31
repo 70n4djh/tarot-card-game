@@ -26,6 +26,23 @@ export default function TarotCard(props: {
     }
   };
 
+  const minorAracanaTitle = (card: MinorArcana): string => {
+    switch (card.rank) {
+      case 1:
+        return "A";
+      case 11:
+        return "P";
+      case 12:
+        return "J";
+      case 13:
+        return "Q";
+      case 14:
+        return "K";
+      default:
+        return String(card.rank);
+    }
+  };
+
   return (
     <div
       style={{
@@ -40,20 +57,27 @@ export default function TarotCard(props: {
             <div className={"card-back"}></div>
           ) : (
             <div className={"card-front"}>
-              {/*<span>{props.isReversed ? "⏬" : "⏫"}</span>*/}
               {"suit" in props.card ? (
                 <>
-                  <p>{props.card.icon}</p>
+                  <div className="poker top">
+                    <p>{minorAracanaTitle(props.card)}</p>
+                    <p>{props.card.icon}</p>
+                  </div>
                   <MinorArcanaSvg card={props.card} />
-                  <p>
+                  <div className="poker bottom">
+                    <p>{props.card.icon}</p>
+                    <p>{minorAracanaTitle(props.card)}</p>
+                  </div>
+                  {/* <p>
                     {props.card.name} of {props.card.suit}
-                  </p>
+                  </p> */}
                 </>
               ) : (
                 <>
-                  <p>{props.card.number}</p>
+                  <p>{props.card.isReversed ? props.card.name : props.card.number}</p>
                   <MajorArcanaSvg card={props.card} />
-                  <p>{props.card.name}</p>
+                  <p><u>{props.card.isReversed ? props.card.number : props.card.name}
+                    </u></p>
                 </>
               )}
             </div>

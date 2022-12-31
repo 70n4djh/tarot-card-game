@@ -32,6 +32,7 @@ export class Deck {
 
     constructor() {
         this.cards = this.initialize();
+        this.shuffle();
     }
 
     private initialize(): Card[] {
@@ -47,16 +48,16 @@ export class Deck {
 
         minors.forEach((name, index) => {
             wands.push({
-                imageSrc: `svgs/w${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.WAND, icon: "🪄"
+                imageSrc: `svgs/w${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.WAND, icon: "♣"
             });
             cups.push({
-                imageSrc: `svgs/c${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.CUP, icon: "🍸"
+                imageSrc: `svgs/c${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.CUP, icon: "♥"
             });
             swords.push({
-                imageSrc: `svgs/s${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.SWORD, icon: "⚔️"
+                imageSrc: `svgs/s${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.SWORD, icon: "♠"
             });
             pentacles.push({
-                imageSrc: `svgs/p${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.PENTACLE, icon: "🪙"
+                imageSrc: `svgs/p${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.PENTACLE, icon: "♦"
             });
         })
 
@@ -65,14 +66,11 @@ export class Deck {
     }
 
     shuffle(): void {
-        console.log("shuffling")
         for (let idx = 0; idx < this.cards.length; idx++) {
             let nextIdx = this.getRandomInt(idx, this.cards.length);
             this.cards[idx].isReversed = this.getRandom();
             swap(this.cards, idx, nextIdx)
         }
-        console.log("shuffled")
-
     }
 
 

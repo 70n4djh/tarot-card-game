@@ -4,19 +4,23 @@ export class LotterPickGenerator {
   panelAPick: number;
   panelBPick: number;
 
-  constructor(panelASize: number, panelBSize: number, panelAPick: number, panelBPick: number) {
-
+  constructor(
+    panelASize: number,
+    panelBSize: number,
+    panelAPick: number,
+    panelBPick: number
+  ) {
     this.panelA = LotterPickGenerator.initialArr(panelASize);
     this.panelB = LotterPickGenerator.initialArr(panelBSize);
     this.panelAPick = panelAPick;
     this.panelBPick = panelBPick;
   }
 
-  private static initialArr (size: number): number[] {
+  private static initialArr(size: number): number[] {
     return [...Array(size).keys()].map((i) => i + 1);
   }
 
-  private random(min: number, max: number):number {
+  private random(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
@@ -35,18 +39,19 @@ export class LotterPickGenerator {
     }
   }
 
-  private generatePicks(arr: number[], num:number): number[] {
+  private generatePicks(arr: number[], num: number): number[] {
     this.shuffle(arr);
     const len = arr.length;
-    let result: number[] = [], idx = 0;
+    let result: number[] = [],
+      picked: number[] = [];
 
     for (let i = 0; i < num; i++) {
       let curIdx = this.random(0, len);
-      while (arr[curIdx] < 0) {
+      while (picked.includes(arr[curIdx])) {
         curIdx = this.random(0, len);
       }
       result.push(arr[curIdx]);
-      arr[curIdx] = -1;
+      picked.push(arr[curIdx]);
     }
 
     return result;

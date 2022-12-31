@@ -79,7 +79,7 @@ export default function MajorArcanaSvg(props: { card: MajorArcana }) {
     <>
       <svg
         viewBox="0 0 350 550"
-        width="140"
+        width="130"
         height="200"
         preserveAspectRatio="none"
         transform={props.card.isReversed ? "rotate(180)" : ""}
