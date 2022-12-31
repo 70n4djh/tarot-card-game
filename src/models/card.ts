@@ -1,8 +1,8 @@
 import {MajorArcana as majors} from "../constants/majorArcana";
 import {MinorArcana as minors} from "../constants/minorArcana";
 
-enum TarotSuit {
-    WAND = "Wand", CUP = "Cup", SWORD = "Sword", PENTACLE = "Pentacle"
+export enum TarotSuit {
+    WAND = "Wands", CUP = "Cups", SWORD = "Swords", PENTACLE = "Pentacles"
 }
 
 export interface Card {
@@ -42,21 +42,21 @@ export class Deck {
         let pentacles: MinorArcana[] = [];
 
         majors.forEach((name, index) => majorArcana.push({
-            name: name, imageSrc: "", isReversed: false, number: index
+            name: name, imageSrc: `svgs/m${this.pad(index)}.svg`, isReversed: false, number: index
         }));
 
         minors.forEach((name, index) => {
             wands.push({
-                imageSrc: "", isReversed: false, name: name, rank: index, suit: TarotSuit.WAND, icon: "🪄"
+                imageSrc: `svgs/w${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.WAND, icon: "🪄"
             });
             cups.push({
-                imageSrc: "", isReversed: false, name: name, rank: index, suit: TarotSuit.CUP, icon: "🍸"
+                imageSrc: `svgs/c${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.CUP, icon: "🍸"
             });
             swords.push({
-                imageSrc: "", isReversed: false, name: name, rank: index, suit: TarotSuit.SWORD, icon: "⚔️"
+                imageSrc: `svgs/s${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.SWORD, icon: "⚔️"
             });
             pentacles.push({
-                imageSrc: "", isReversed: false, name: name, rank: index, suit: TarotSuit.PENTACLE, icon: "🪙"
+                imageSrc: `svgs/p${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.PENTACLE, icon: "🪙"
             });
         })
 
@@ -67,7 +67,7 @@ export class Deck {
     shuffle(): void {
         console.log("shuffling")
         for (let idx = 0; idx < this.cards.length; idx++) {
-            let nextIdx = this.getRandomInt(idx, this.cards.length-1);
+            let nextIdx = this.getRandomInt(idx, this.cards.length);
             this.cards[idx].isReversed = this.getRandom();
             swap(this.cards, idx, nextIdx)
         }
@@ -103,6 +103,10 @@ export class Deck {
 
     private getRandom(): boolean {
         return Math.random() >= 0.5;
+    }
+
+    private pad(n: number): string  {
+        return String(n).padStart(2, '0');
     }
 
 

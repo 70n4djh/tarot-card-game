@@ -1,90 +1,115 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .tarot-card {
-    width: 12.5em;
-    height: 21.5em;
-    left: -6.25em;
-    top: -8.75em;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 0.75em;
-    font-size: 14px;
-    color: #333;
-    float: left;
-    position: absolute;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
-    overflow: hidden;
+  width: 12.5em;
+  height: 21.5em;
+  left: -6.25em;
+  top: -8.75em;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0.75em;
+  font-size: 14px;
+  color: #333;
+  float: left;
+  position: absolute;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+  overflow: hidden;
 }
 
 .tarot-card .card-back {
-    background-color: #e5e5f7;
-    opacity: 0.9;
-    background:
-            linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px,
-            linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px,
-            linear-gradient(315deg, #444cf755 25%, transparent 25%) 0 0/ 20px 20px,
-            linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0 0/ 20px 20px;
-    width: 100%;
-    height: 100%;
+  opacity: 0.9;
+  border: 0.5em solid #fff;
+  border-radius: 0.75em;
+  background: linear-gradient(135deg, #00067355 25%, transparent 25%) -9px 0/
+      18px 18px,
+    linear-gradient(225deg, #000673 25%, transparent 25%) -9px 0/ 18px 18px,
+    linear-gradient(315deg, #00067355 25%, transparent 25%) 0px 0/ 18px 18px,
+    linear-gradient(45deg, #000673 25%, #e3e3e3 25%) 0px 0/ 18px 18px;
+  width: 11.5em;
+  height: 20.5em;
 }
 
 .stage {
-    position: fixed;
-    left: calc(50% - 50em);
-    top: calc(50% - 28.125em);
-    width: 100em;
-    height: 56.25em;
-    border-radius: 0.5em;
-    border: 3px solid transparent;
+  position: fixed;
+  left: calc(50% - 100em);
+  top: calc(50% - 56.25em);
+  width: 200em;
+  height: 112.5em;
+  border-radius: 0.5em;
+  border: 3px solid transparent;
+  background-color: azure;
 }
 
 .cards {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .card-front {
-    display: grid;
-    align-content: space-between;
-    align-items: stretch;
-    justify-items: stretch;
-    height: 100%;
+  display: flex;
+  align-content: space-around;
+  align-items: center;
+  justify-items: stretch;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.125rem;
+  margin: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
+}
+
+.menu-item {
+  display: inline-block;
+  background-color: #222;
+  color: #fff;
+  margin: 0.125rem;
+  padding: 0.75rem;
+  border-radius: 0.1875rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
