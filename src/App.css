@@ -38,49 +38,50 @@
 }
 
 .tarot-card {
-  width: 12.5em;
-  height: 21.5em;
+  width: 25em;
+  height: 43em;
   left: -6.25em;
   top: -8.75em;
   background: white;
-  border: 1px solid #ddd;
-  border-radius: 0.75em;
-  font-size: 14px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 1.5em;
+  font-size: 1rem;
   color: #333;
   float: left;
   position: absolute;
   box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
   overflow: hidden;
+  cursor: grab;
 }
 
 .tarot-card .card-back {
   opacity: 0.9;
-  border: 0.5em solid #f8f0e5;
+  border: 1em solid #f8f0e5;
   border-radius: 0.75em;
   background: linear-gradient(135deg, #00067355 25%, transparent 25%) -9px 0/
       18px 18px,
     linear-gradient(225deg, #000673 25%, transparent 25%) -9px 0/ 18px 18px,
     linear-gradient(315deg, #00067355 25%, transparent 25%) 0px 0/ 18px 18px,
     linear-gradient(45deg, #000673 25%, #e3e3e3 25%) 0px 0/ 18px 18px;
-  width: 11.5em;
-  height: 20.5em;
+  width: 23em;
+  height: 41em;
 }
 
 .stage {
   position: fixed;
-  left: calc(50% - 100em);
-  top: calc(50% - 56.25em);
-  width: 200em;
-  height: 112.5em;
-  border-radius: 0.5em;
+  left: calc(50% - 150em);
+  top: calc(50% - 75em);
+  width: 300em;
+  height: 150em;
+  border-radius: 1em;
   border: 3px solid transparent;
   background-color: #fff;
 }
 
 .cards {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 35%;
+  left: 15%;
 }
 
 .card-front {
@@ -93,6 +94,7 @@
   flex-wrap: nowrap;
   flex-direction: column;
   height: 100%;
+  font-size: 2em;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 600;
   background-color: #f8f0e5;
@@ -104,6 +106,7 @@
   left: 0;
   margin: 0.125rem;
   margin: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
+  z-index: 999;
 }
 
 .menu-item {
@@ -118,8 +121,8 @@
 }
 
 .poker p {
-  width: 9rem;
-  font-size: 1rem;
+  width: 16rem;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -133,5 +136,34 @@
 }
 
 p.small {
-  font-size: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.spreads {
+  width: 150em;
+  height: 180em;
+  position: absolute;
+  border: 3px solid #ddd;
+  right: 20em;
+  top: calc(50% - 95em);
+  border-radius: 3em;
+  padding: 5em 15em;
+}
+
+.slot {
+  width: 25em;
+  height: 35em;
+  border: 0.5rem solid rgb(231, 231, 231);
+  border-radius: 2em;
+  position: absolute;
+}
+
+p.spread-meaning {
+  font-size: 4rem;
+  color: #ddd;
+}
+
+p.spread-index {
+  font-size: 10rem;
+  color: #ddd;
 }

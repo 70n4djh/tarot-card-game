@@ -8,7 +8,9 @@ export enum TarotSuit {
 export interface Card {
     readonly name: string;
     readonly imageSrc: string;
+    readonly id: string;
     isReversed: boolean;
+    isFlipped: boolean;
 }
 
 export interface MajorArcana extends Card {
@@ -42,22 +44,25 @@ export class Deck {
         let swords: MinorArcana[] = [];
         let pentacles: MinorArcana[] = [];
 
+        let showBack = true;
+
+
         majors.forEach((name, index) => majorArcana.push({
-            name: name, imageSrc: `svgs/m${this.pad(index)}.svg`, isReversed: false, number: index
+            name: name, imageSrc: `svgs/m${this.pad(index)}.svg`, isReversed: false, number: index, id: name, isFlipped: showBack
         }));
 
         minors.forEach((name, index) => {
             wands.push({
-                imageSrc: `svgs/w${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.WAND, icon: "♣"
+                imageSrc: `svgs/w${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.WAND, icon: "♣", id: name+"♣", isFlipped: showBack
             });
             cups.push({
-                imageSrc: `svgs/c${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.CUP, icon: "♥"
+                imageSrc: `svgs/c${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.CUP, icon: "♥", id: name+"♥", isFlipped: showBack
             });
             swords.push({
-                imageSrc: `svgs/s${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.SWORD, icon: "♠"
+                imageSrc: `svgs/s${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.SWORD, icon: "♠", id: name+"♠", isFlipped: showBack
             });
             pentacles.push({
-                imageSrc: `svgs/p${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.PENTACLE, icon: "♦"
+                imageSrc: `svgs/p${this.pad(index)}.svg`, isReversed: false, name: name, rank: index+1, suit: TarotSuit.PENTACLE, icon: "♦", id: name+"♦", isFlipped: showBack
             });
         })
 
@@ -73,27 +78,6 @@ export class Deck {
         }
     }
 
-
-    drawCard(index: number): Card {
-        return this.cards[index];
-    }
-
-    describeCard(card: Card): string {
-        if ("suit" in card) {
-            let minorCard = card as MinorArcana;
-            return `${minorCard.name} of ${minorCard.suit}`;
-        } else {
-            let majorCard = card as MajorArcana;
-            return `${majorCard.name}`;
-        }
-    }
-
-    displayAll(): string[] {
-        let cardList: string[] = [];
-        this.cards.forEach(card => cardList.push(this.describeCard(card)));
-
-        return cardList;
-    }
 
     private getRandomInt(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min) + min);

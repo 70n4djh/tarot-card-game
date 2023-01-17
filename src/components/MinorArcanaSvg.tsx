@@ -1,9 +1,8 @@
-import React, { DragEventHandler, SVGAttributes, useState } from "react";
 import { MinorArcana, TarotSuit } from "../models/card";
 import CupSvg from "./CupSvg";
-import WandSvg from "./WandSvg";
-import SwordSvg from "./SwordSvg";
 import PentacleSvg from "./PentacleSvg";
+import SwordSvg from "./SwordSvg";
+import WandSvg from "./WandSvg";
 
 
 export default function MinorArcanaSvg(props: { card: MinorArcana }) {
@@ -26,8 +25,8 @@ export default function MinorArcanaSvg(props: { card: MinorArcana }) {
     <>
       <svg
         viewBox="0 0 350 600"
-        width="120"
-        height="200"
+        width="240"
+        height="400"
         preserveAspectRatio="none"
         transform={props.card.isReversed ? "rotate(180)" : ""}
       >

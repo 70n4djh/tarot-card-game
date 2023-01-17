@@ -1,4 +1,3 @@
-import React, { DragEventHandler, SVGAttributes, useState } from "react";
 import { MajorArcana } from "../models/card";
 import { ReactComponent as FoolCard } from "../svgs/m00.svg";
 import { ReactComponent as MagicianCard } from "../svgs/m01.svg";
@@ -79,8 +78,8 @@ export default function MajorArcanaSvg(props: { card: MajorArcana }) {
     <>
       <svg
         viewBox="0 0 350 550"
-        width="130"
-        height="200"
+        width="260"
+        height="400"
         preserveAspectRatio="none"
         transform={props.card.isReversed ? "rotate(180)" : ""}
       >

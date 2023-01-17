@@ -1,4 +1,3 @@
-import React, { DragEventHandler, SVGAttributes, useState } from "react";
 import { MinorArcana } from "../models/card";
 import { ReactComponent as AceCard } from "../svgs/w01.svg";
 import { ReactComponent as TwoCard } from "../svgs/w02.svg";
