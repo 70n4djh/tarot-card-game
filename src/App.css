@@ -38,13 +38,13 @@
 }
 
 .tarot-card {
-  width: 25em;
-  height: 43em;
-  left: -6.25em;
-  top: -8.75em;
+  width: 12.5vh;
+  height: 21.5vh;
+  left: -6.25vh;
+  top: -8.75vh;
   background: white;
   border: 1px solid rgb(210, 210, 210);
-  border-radius: 1.5em;
+  border-radius: 0.75vh;
   font-size: 1rem;
   color: #333;
   float: left;
@@ -56,25 +56,25 @@
 
 .tarot-card .card-back {
   opacity: 0.9;
-  border: 1em solid #f8f0e5;
-  border-radius: 0.75em;
+  border: 0.5vh solid #f8f0e5;
+  border-radius: 0.75vh;
   background: linear-gradient(135deg, #00067355 25%, transparent 25%) -9px 0/
       18px 18px,
     linear-gradient(225deg, #000673 25%, transparent 25%) -9px 0/ 18px 18px,
     linear-gradient(315deg, #00067355 25%, transparent 25%) 0px 0/ 18px 18px,
     linear-gradient(45deg, #000673 25%, #e3e3e3 25%) 0px 0/ 18px 18px;
-  width: 23em;
-  height: 41em;
+  width: 11.5vh;
+  height: 20.5vh;
 }
 
 .stage {
   position: fixed;
-  left: calc(50% - 150em);
-  top: calc(50% - 75em);
-  width: 300em;
-  height: 150em;
-  border-radius: 1em;
-  border: 3px solid transparent;
+  left: calc(50% - 75vh);
+  top: calc(50% - 40vh);
+  width: 150vh;
+  height: 80vh;
+  border-radius: 1vh;
+  border: 3px solid #eee;
   background-color: #fff;
 }
 
@@ -94,7 +94,7 @@
   flex-wrap: nowrap;
   flex-direction: column;
   height: 100%;
-  font-size: 2em;
+  font-size: 1.3vh;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 600;
   background-color: #f8f0e5;
@@ -121,8 +121,8 @@
 }
 
 .poker p {
-  width: 16rem;
-  font-size: 2rem;
+  width: 11vh;
+  font-size: 1.4vh;
   margin: 0;
 }
 
@@ -136,34 +136,34 @@
 }
 
 p.small {
-  font-size: 1.6rem;
+  font-size: 1.2vh;
 }
 
 .spreads {
-  width: 150em;
-  height: 180em;
+  width: 80vh;
+  height: 70vh;
   position: absolute;
-  border: 3px solid #ddd;
-  right: 20em;
-  top: calc(50% - 95em);
-  border-radius: 3em;
-  padding: 5em 15em;
+  border: 3px solid transparent;
+  right: 10vh;
+  top: calc(50% - 40vh);
+  border-radius: 1vh;
+  padding: 5vh 8vh;
 }
 
 .slot {
-  width: 25em;
-  height: 35em;
-  border: 0.5rem solid rgb(231, 231, 231);
-  border-radius: 2em;
+  width: 12.5vh;
+  height: 21.5vh;
+  border: 0.5vh solid rgb(231, 231, 231);
+  border-radius: 1vh;
   position: absolute;
 }
 
 p.spread-meaning {
-  font-size: 4rem;
+  font-size: 2vh;
   color: #ddd;
 }
 
 p.spread-index {
-  font-size: 10rem;
+  font-size: 5vh;
   color: #ddd;
 }

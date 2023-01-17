@@ -25,8 +25,8 @@ export default function MinorArcanaSvg(props: { card: MinorArcana }) {
     <>
       <svg
         viewBox="0 0 350 600"
-        width="240"
-        height="400"
+        width="120"
+        height="220"
         preserveAspectRatio="none"
         transform={props.card.isReversed ? "rotate(180)" : ""}
       >

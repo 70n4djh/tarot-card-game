@@ -39,17 +39,17 @@ export class Spreads {
 
     constructor() {
         const layout: SpreadLegend[][] = new Array(5).fill(undefined).map(row => Array(5));
-        layout[2][0] = {
+        layout[1][0] = {
             index: 1,
             meaning: "If Yes",
             description: ""
         }
-        layout[2][2] = {
+        layout[1][2] = {
             index: 2,
             meaning: "If No",
             description: ""
         }
-        layout[2][4] = {
+        layout[1][4] = {
             index: 3,
             meaning: "Guidance",
             description: ""

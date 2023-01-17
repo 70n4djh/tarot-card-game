@@ -15,14 +15,11 @@ export const TarotCard = forwardRef(function (props: {
 
   const [isDragging, setIsDragging] = useState(false);
   const [isBack, setIsBack] = useState(true);
+
   const flip = () => {
     if (!isDragging) setIsBack(!isBack);
   };
   const [controlledPosition, setControlledPosition] = useState({x: 0-0.5*props.offset, y: 0-0.5*props.offset});
-
-  useImperativeHandle(ref, () => ({
-    setBackState: () => flip()
-  }));
 
   const eventControl = (event: { type: any }, info: any) => {
     if (event.type === "mousemove" || event.type === "touchmove") {
@@ -40,7 +37,6 @@ export const TarotCard = forwardRef(function (props: {
     const {x, y} = position;
     setControlledPosition({x, y});
   };
-
 
   const minorAracanaTitle = (card: MinorArcana): string => {
     switch (card.rank) {
@@ -65,7 +61,7 @@ export const TarotCard = forwardRef(function (props: {
       onDrag={(e: DraggableEvent, data: DraggableData) => onControlledDrag(e, data)}
       onStop={eventControl}
       grid={[25, 25]}
-      scale={0.4}
+      scale={1}
       nodeRef={nodeRef}
     >
       <div className={"tarot-card"} onClick={flip} ref={nodeRef}>

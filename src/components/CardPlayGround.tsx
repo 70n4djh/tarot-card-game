@@ -47,7 +47,7 @@ export default function CardPlayGround() {
       </div>
       <div
         className={"stage"}
-        style={{ transform: "translate(0rem, 0rem) scale(40%, 40%)" }}
+        style={{ transform: "translate(0rem, 0rem)" }}
       >
         <div className="spreads">
           {grid.map((row, indexRow) =>
@@ -58,7 +58,7 @@ export default function CardPlayGround() {
                     className="slot"
                     key={indexCell}
                     style={{
-                      transform: `translate(${indexCell * 25 + indexCell * 5}em, ${indexRow * 36}em`,
+                      transform: `translate(${indexCell * 14.5}vh, ${indexRow * 22}vh`,
                     }}
                   >
                     <p className="spread-meaning">{spreads.spreads[0].layout.legends[indexRow][indexCell].meaning}</p>
